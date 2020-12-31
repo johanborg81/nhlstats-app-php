@@ -17,6 +17,10 @@ class ComposerStaticInit8387136af1983c341127596952215dfe
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'n' => 
+        array (
+            'nhl\\' => 4,
+        ),
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
@@ -28,10 +32,6 @@ class ComposerStaticInit8387136af1983c341127596952215dfe
         'P' => 
         array (
             'Prophecy\\' => 9,
-        ),
-        'N' => 
-        array (
-            'NHL\\' => 4,
         ),
         'D' => 
         array (
@@ -47,6 +47,10 @@ class ComposerStaticInit8387136af1983c341127596952215dfe
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
+        'nhl\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/',
+        ),
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
@@ -58,10 +62,6 @@ class ComposerStaticInit8387136af1983c341127596952215dfe
         'Prophecy\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
-        ),
-        'NHL\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -857,6 +857,7 @@ class ComposerStaticInit8387136af1983c341127596952215dfe
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Webmozart\\Assert\\Mixin' => __DIR__ . '/..' . '/webmozart/assert/src/Mixin.php',
+        'nhl\\Core\\Router' => __DIR__ . '/../..' . '/Core/Router.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',

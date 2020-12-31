@@ -789,6 +789,7 @@ return array(
     'TheSeer\\Tokenizer\\XMLSerializer' => $vendorDir . '/theseer/tokenizer/src/XMLSerializer.php',
     'Webmozart\\Assert\\Assert' => $vendorDir . '/webmozart/assert/src/Assert.php',
     'Webmozart\\Assert\\Mixin' => $vendorDir . '/webmozart/assert/src/Mixin.php',
+    'nhl\\Core\\Router' => $baseDir . '/Core/Router.php',
     'phpDocumentor\\Reflection\\DocBlock' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
     'phpDocumentor\\Reflection\\DocBlockFactory' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
     'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',
