@@ -12,6 +12,8 @@ class Application {
     public static $ROOT_DIR;
     public $router;
     public $request;
+    public $response; // Response
+    public static $app; // Application
 
     /**
      * Get the path to the root when calling the application in the router class
@@ -21,8 +23,10 @@ class Application {
      */
     public function __construct($root_path) {
         self::$ROOT_DIR = $root_path;
+        self::$app = $this;
         $this->request = new Request();
-        $this->router = new Router($this->request);
+        $this->response = new Response();
+        $this->router = new Router($this->request, $this->response);
     }
 
     public function run() {

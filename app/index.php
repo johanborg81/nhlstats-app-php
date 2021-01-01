@@ -1,7 +1,7 @@
 <?php
 
 // include php scripts
-require_once '../Config/init.php';
+require_once __DIR__. '/../Config/init.php';
 
 use nhl\Core\Application;
 

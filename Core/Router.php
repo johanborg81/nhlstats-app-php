@@ -10,10 +10,19 @@ namespace nhl\Core;
 
 class Router {
     public $request;
+    public $response; // Response
     public $getRoutes = [];
 
-    public function __construct($request) {
+    /**
+     * Router constructor
+     *
+     * @author Johan Borg <johanborg81@hotmail.com>
+     * @param Request $request
+     * @param Response $response
+     */
+    public function __construct(Request $request, Response $response) {
         $this->request = $request;
+        $this->response = $response;
     }
 
     public function get($path, $callback) {
@@ -26,6 +35,7 @@ class Router {
         $callback = $this->getRoutes[$method][$path] ?? false;
 
         if ($callback === false) {
+            $this->response->set_status_code(404);
             return "Page not found";
         }
 
