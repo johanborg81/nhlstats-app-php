@@ -26,10 +26,58 @@ class Router {
         $callback = $this->getRoutes[$method][$path] ?? false;
 
         if ($callback === false) {
-            echo "Page not found";
-            exit;
+            return "Page not found";
         }
 
-        echo call_user_func($callback);
+        if (is_string($callback)) {
+            return $this->render_view($callback);
+        }
+
+        return call_user_func($callback);
+    }
+
+    /**
+     * Render the view of the page.
+     * Calls the layout_content method to render a specific layout.
+     * Calls the render_only_view to render a specific page.
+     * 
+     * @access public
+     * @author Johan Borg <johanborg81@hotmail.com>
+     * @method mixed layout_content()
+     * @method mixed render_only_view()
+     * @param mixed $view
+     */
+    public function render_view($view) {
+        $layout_content = $this->layout_content();
+        $view_content = $this->render_only_view($view);
+        return str_replace('{{content}}', $view_content, $layout_content);
+    }
+
+    /**
+     * Renders the main layout in the view.
+     * This is called in the render_view method.
+     * 
+     * @access protected
+     * @author Johan Borg <johanborg81@hotmail.com>
+     * 
+     */
+    protected function layout_content() {
+        ob_start();
+        include_once Application::$ROOT_DIR."/views/layouts/main.php";
+        return ob_get_clean();
+    }
+
+    /**
+     * This method will be called in render_view method.
+     * Will render a specific page.
+     * 
+     * @access protected
+     * @author Johan Borg <johanborg81@hotmail.com>
+     * @param mixed $view
+     */
+    protected function render_only_view($view) {
+        ob_start();
+        include_once Application::$ROOT_DIR . "/views/$view.php";
+        return ob_get_clean();
     }
 }

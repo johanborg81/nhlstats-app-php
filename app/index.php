@@ -5,15 +5,11 @@ require_once '../Config/init.php';
 
 use nhl\Core\Application;
 
-$app = new Application();
+$app = new Application(dirname(__DIR__));
 
 // Pages
-$app->router->get('/', function() {
-    return 'Hello';
-});
+$app->router->get('/', 'home');
 
-$app->router->get('/contact', function() {
-    return 'Contact';
-});
+$app->router->get('/about', 'about');
 
 $app->run();
