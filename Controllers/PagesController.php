@@ -2,6 +2,7 @@
 
 namespace nhl\Controllers;
 use nhl\Core\Application;
+use nhl\Core\Controller;
 
 /**
  * Class PagesController
@@ -9,7 +10,7 @@ use nhl\Core\Application;
  * @author Johan Borg <johanborg81@hotmail.com>
  * @package nhl\controllers
  */
-class PagesController {
+class PagesController extends Controller {
     /**
      * Handles the get request for the home page
      * and renders the view.
@@ -22,7 +23,7 @@ class PagesController {
         $params = [
             'name' => "Johan"
         ];
-        return Application::$app->router->render_view('home', $params);
+        return $this->render('home', $params);
     }
 
     /**
@@ -33,6 +34,6 @@ class PagesController {
      * @author Johan Borg <johanborg81@hotmail.com>
      */
     public function about() {
-        return Application::$app->router->render_view('about');
+        return $this->render('about');
     }
 }

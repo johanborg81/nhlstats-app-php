@@ -11,6 +11,6 @@ $app = new Application(dirname(__DIR__));
 // Pages
 $app->router->get('/', [PagesController::class, 'home']);
 
-$app->router->get('/about', 'about');
+$app->router->get('/about', [PagesController::class, 'about']);
 
 $app->run();
