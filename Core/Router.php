@@ -36,14 +36,16 @@ class Router {
 
         if ($callback === false) {
             $this->response->set_status_code(404);
-            return "Page not found";
+            return $this->render_view("_404");
         }
 
         if (is_string($callback)) {
             return $this->render_view($callback);
         }
 
-        return call_user_func($callback);
+        if (is_array($callback)) {
+            return call_user_func([new $callback[0], $callback[1]]);
+        }
     }
 
     /**
@@ -57,9 +59,22 @@ class Router {
      * @method mixed render_only_view()
      * @param mixed $view
      */
-    public function render_view($view) {
+    public function render_view($view, $params = []) {
         $layout_content = $this->layout_content();
-        $view_content = $this->render_only_view($view);
+        $view_content = $this->render_only_view($view, $params);
+        return str_replace('{{content}}', $view_content, $layout_content);
+    }
+
+    /**
+     * Renders the layout content.
+     * 
+     * @access public
+     * @author Johan Borg <johanborg81@hotmail.com>
+     * @param mixed $view_content
+     * @return void
+     */
+    public function render_content($view_content) {
+        $layout_content = $this->layout_content();
         return str_replace('{{content}}', $view_content, $layout_content);
     }
 
@@ -85,7 +100,8 @@ class Router {
      * @author Johan Borg <johanborg81@hotmail.com>
      * @param mixed $view
      */
-    protected function render_only_view($view) {
+    protected function render_only_view($view, $params) {
+        extract($params);
         ob_start();
         include_once Application::$ROOT_DIR . "/views/$view.php";
         return ob_get_clean();
