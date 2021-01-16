@@ -6,10 +6,3 @@
     <title>MVC Training</title>
 </head>
 <body>
-    <navbar class="nav">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About NHLStats</a></li>
-        </ul>
-    </navbar>
-    

@@ -20,10 +20,7 @@ class PagesController extends Controller {
      * @return void
      */
     public function home() {
-        $params = [
-            'name' => "Johan"
-        ];
-        return $this->render('home', $params);
+        return $this->render('home');
     }
 
     /**
@@ -35,5 +32,27 @@ class PagesController extends Controller {
      */
     public function about() {
         return $this->render('about');
+    }
+
+    /**
+     * Handles the get request for the player page
+     * and renders the view
+     * 
+     * @access public
+     * @author Johan Borg <johanborg81@hotmail.com>
+     */
+    public function player() {
+        return $this->render('player');
+    }
+
+    /**
+     * Handles the get request for the player page
+     * and renders the view
+     * 
+     * @access public
+     * @author Johan Borg <johanborg81@hotmail.com>
+     */
+    public function team() {
+        return $this->render('team');
     }
 }
