@@ -17,9 +17,25 @@ class Player {
      * @author Johan Borg <johanborg81@hotmail.com>
      * @return string
      */
-    public function get_home_players() {
+    public function get_home_player() {
         $url = 'https://statsapi.web.nhl.com/api/v1/people/8476458';
         return $url;
+    }
+
+    /**
+     * Set options for the curl
+     *
+     * @access public
+     * @author Johan Borg <johanborg81@hotmail.com>
+     * @param [type] $curl
+     * @param [type] $resource
+     * @return void
+     */
+    private function get_curl($curl, $resource)
+    {
+        curl_setopt($curl, CURLOPT_URL, $resource);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     }
 
     /**
@@ -31,12 +47,10 @@ class Player {
      */
     protected function set_home_player() {
         $curl = curl_init();
-        $resource = $this->get_home_players();
-        curl_setopt($curl, CURLOPT_URL, $resource);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $resource = $this->get_home_player();
+        $this->get_curl($curl, $resource);
         $result = curl_exec($curl);
-        
+
         if ($e = curl_error($curl)) {
             echo $e;
         } else {
@@ -44,17 +58,6 @@ class Player {
             return $obj;
         }
         curl_close($curl);
-    }
-
-    /**
-     * Get the api data for the current season
-     *
-     * @access private
-     * @author Johan Borg <johanborg81@hotmail.com>
-     */
-    private function get_home_player_current_stats() {
-        $url = 'https://statsapi.web.nhl.com//api/v1/people/8476458/stats?stats=statsSingleSeason&season=20202021';
-        return $url;
     }
 
     /**
@@ -65,10 +68,8 @@ class Player {
      */
     protected function set_home_player_current_stats() {
         $curl = curl_init();
-        $resource = $this->get_home_player_current_stats();
-        curl_setopt($curl, CURLOPT_URL, $resource);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $resource = $this->get_home_player(). "/stats?stats=statsSingleSeason&season=20202021";
+        $this->get_curl($curl, $resource);
         $result = curl_exec($curl);
         
         if ($e = curl_error($curl)) {
@@ -81,17 +82,6 @@ class Player {
     }
 
     /**
-     * Get the api data for the last season
-     *
-     * @access private
-     * @author Johan Borg <johanborg81@hotmail.com>
-     */
-    private function get_home_player_last_stats() {
-        $url = 'https://statsapi.web.nhl.com//api/v1/people/8476458/stats?stats=statsSingleSeason&season=20182019';
-        return $url;
-    }
-
-    /**
      * Handle the data for the last season data stats
      *
      * @access protected
@@ -99,10 +89,8 @@ class Player {
      */
     protected function set_home_player_last_stats() {
         $curl = curl_init();
-        $resource = $this->get_home_player_last_stats();
-        curl_setopt($curl, CURLOPT_URL, $resource);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $resource = $this->get_home_player(). "/stats?stats=statsSingleSeason&season=20182019";
+        $this->get_curl($curl, $resource);
         $result = curl_exec($curl);
 
         if ($e = curl_error($curl)) {
@@ -115,17 +103,6 @@ class Player {
     }
 
     /**
-     * Get the api data for the career stats
-     *
-     * @access private
-     * @author Johan Borg <johanborg81@hotmail.com>
-     */
-    private function get_home_player_career_stats() {
-        $url = 'https://statsapi.web.nhl.com/api/v1/people/8476458?expand=person.stats,stats.team&stats=yearByYear,yearByYearPlayoffs,careerRegularSeason&site=en_nhl';
-        return $url;
-    }
-
-    /**
      * Handle the data for the career stats
      *
      * @access protected
@@ -133,10 +110,8 @@ class Player {
      */
     protected function set_home_player_career_stats() {
         $curl = curl_init();
-        $resource = $this->get_home_player_career_stats();
-        curl_setopt($curl, CURLOPT_URL, $resource);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $resource = $this->get_home_player()."?expand=person.stats,stats.team&stats=yearByYear,yearByYearPlayoffs,careerRegularSeason&site=en_nhl";
+        $this->get_curl($curl, $resource);
         $result = curl_exec($curl);
 
         if ($e = curl_error($curl)) {
@@ -161,10 +136,8 @@ class Player {
 
     protected function set_home_player_playoff_stats() {
         $curl = curl_init();
-        $resource = $this->get_home_player_playoff_stats();
-        curl_setopt($curl, CURLOPT_URL, $resource);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $resource = $this->get_home_player()."?expand=person.stats,stats.team&stats=yearByYear,yearByYearPlayoffs,careerRegularSeason,careerPlayoffs&site=en_nhl";
+        $this->get_curl($curl, $resource);
         $result = curl_exec($curl);
 
         if ($e = curl_error($curl)) {
@@ -187,21 +160,6 @@ class Player {
         $id = $_GET['id'];
         $url =  "https://statsapi.web.nhl.com/api/v1/people/$id";
         return $url;
-    }
-
-    /**
-     * Set options for the curl
-     *
-     * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
-     * @param [type] $curl
-     * @param [type] $resource
-     * @return void
-     */
-    private function get_curl($curl, $resource) {
-        curl_setopt($curl, CURLOPT_URL, $resource);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     }
 
     protected function get_player_stats() {
