@@ -7,11 +7,14 @@ require_once '../inc/header.php';
 require_once '../inc/navbar.php';
 
 use nhl\Controllers\PlayersController;
+use nhl\Controllers\TeamsController;
 
 $stats = new PlayersController();
 $player = $stats->show_player();
 $current = $stats->show_current_stats();
 $last = $stats->show_last_stats();
+
+$team = new TeamsController();
 
 ?>
 <div class="container">
@@ -33,13 +36,17 @@ $last = $stats->show_last_stats();
 
             ?>
         </section>
+        <section class="section__right">
+        
+        </section>
     </section>
     <section class="buttons">
-        <form action="">
-            <button id="current__season">Current Season</button>
-            <button id="last__season">Last Season</button>
-            <button id="career__stats">Career Stats</button>
-            <button id="playoff__stats">Playoff Stats</button>
-        </form>
+        <button id="current__season">Current Season</button>
+        <button id="last__season">Last Season</button>
+        <button id="career__stats">Career Stats</button>
+        <button id="playoff__stats">Playoff Stats</button>
     </section>
 </div>
+<?php
+
+require '../inc/footer.php';

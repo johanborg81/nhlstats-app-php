@@ -123,17 +123,6 @@ class Player {
         curl_close($curl);
     }
 
-    /**
-     * Get the data for the playoff stats
-     *
-     * @access private
-     * @author Johan Borg <johanborg81@hotmail.com>
-     */
-    private function get_home_player_playoff_stats() {
-        $url = 'https://statsapi.web.nhl.com/api/v1/people/8476458?expand=person.stats,stats.team&stats=yearByYear,yearByYearPlayoffs,careerRegularSeason,careerPlayoffs&site=en_nhl';
-        return $url;
-    }
-
     protected function set_home_player_playoff_stats() {
         $curl = curl_init();
         $resource = $this->get_home_player()."?expand=person.stats,stats.team&stats=yearByYear,yearByYearPlayoffs,careerRegularSeason,careerPlayoffs&site=en_nhl";

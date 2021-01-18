@@ -30,7 +30,13 @@ $last = $team->show_last_season();
 
             ?>
         </section>
-        <section class="section__right"></section>
+        <section class="section__right">
+            <?php
+
+            $team->team_list();
+
+            ?>
+        </section>
     </div>
     <section class="section__bottom">
         <?php
@@ -41,7 +47,10 @@ $last = $team->show_last_season();
         ?>
     </section>
     <section class="buttons">
-        <button id="current">Current Season</button>
-        <button id="last">Last Season</button>
+        <button id="current__season">Current Season</button>
+        <button id="last__season">Last Season</button>
     </section>
 </div>
+<?php
+
+require '../inc/footer.php';
