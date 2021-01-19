@@ -1,4 +1,4 @@
-<section class="career_stats">
+<section class="career__stats">
     <h2>Career Stats</h2>
     <ul class="stats__list">
         <li><span>Assists: </span><?= $career[918]; ?></li>

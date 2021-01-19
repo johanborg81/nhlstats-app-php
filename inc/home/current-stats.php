@@ -1,4 +1,4 @@
-<section class="current__stats">
+<section class="current__season">
     <h2>Current Stats</h2>
     <ul class="stats__list">
         <li><span>Assists: </span><?= $current[7]; ?></li>

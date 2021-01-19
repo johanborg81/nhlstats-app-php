@@ -1,4 +1,4 @@
-<section class="last__stats">
+<section class="last__season">
     <h2>Last Stats</h2>
     <ul class="stats__list">
         <li><span>Assists: </span><?= $last[7]; ?></li>
