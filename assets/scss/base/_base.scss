@@ -1,0 +1,30 @@
+// Contains the basic styles
+
+/**
+* Basic styles for list elements
+*/
+li {
+    list-style: none;
+    color: $text-color;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/**
+* Basic styles for links
+*/ 
+a {
+    color: $text-color;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+        text-transform: uppercase;
+    }
+}
+
+/**
+* Basic styles for span elements
+*/ 
+span {
+    font-weight: bold;
+}

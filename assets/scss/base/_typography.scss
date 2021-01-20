@@ -1,0 +1,10 @@
+/**
+* Basic typography for copy text
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    color: $text-color;
+    font-family: $text-font-stack;
+}

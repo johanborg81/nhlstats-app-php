@@ -1,0 +1,21 @@
+// This file contains all application-wide Sass variable
+
+// Copy text color
+/// @type Color
+$text-color: #333;
+
+// Navigation link color
+/// @type Color
+$nav-link-color: #fff;
+
+// Navigation bar color
+/// @type Color
+$nav-color: #000;
+
+// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+// Font family
+/// @type List
+$text-font-stack: 'Poppins', sans-serif;
