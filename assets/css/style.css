@@ -2,6 +2,7 @@
 * Basic styles for list elements
 */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sintony&display=swap");
 li {
   list-style: none;
   color: #333;
@@ -15,10 +16,12 @@ li {
 a {
   color: #333;
   text-decoration: none;
+  letter-spacing: 1px;
 }
 a:hover {
   text-decoration: underline;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 /**
@@ -29,6 +32,7 @@ span {
 }
 
 * {
+  box-sizing: border-box;
   margin: 0px;
   padding: 0px;
 }
@@ -39,6 +43,31 @@ span {
 body {
   color: #333;
   font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+}
+
+.navbar .navbar__nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar .navbar__nav i {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #fff;
+}
+.navbar .navbar__nav a {
+  color: #fff;
+  font-family: "Sintony", sans-serif;
+  text-transform: uppercase;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.navbar .navbar__nav a:hover {
+  text-decoration: underline;
 }
 
 .current__season {

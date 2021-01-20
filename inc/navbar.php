@@ -1,6 +1,8 @@
-<navbar class="nav">
-    <ul>
-        <li><a href="<?php BASE_URL . 'views/home.php'; ?>">Home</a></li>
-        <li><a href="<?php BASE_URL . 'views/about'; ?>">About NHLStats</a></li>
-    </ul>
+<navbar class="navbar">
+    <div class="navbar__nav">
+        <i class="fas fa-hockey-puck"></i>
+        <a href="home.php">Home</a>
+        <a href="about.php">About</a>
+        <i class="fas fa-hockey-puck"></i>
+    </div>
 </navbar>

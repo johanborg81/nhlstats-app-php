@@ -1,0 +1,27 @@
+.navbar {
+    
+    .navbar__nav {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: $nav-color;
+        @include center;
+
+        i {
+            padding-left: 10px;
+            padding-right: 10px;
+            color: $nav-link-color;
+        }
+
+        a {
+            color: $nav-link-color;
+            font-family: $navbar-font;
+            text-transform: uppercase;
+            margin-left: 20px;
+            margin-right: 20px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

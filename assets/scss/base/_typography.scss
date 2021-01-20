@@ -3,8 +3,10 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sintony&display=swap');
 
 body {
     color: $text-color;
     font-family: $text-font-stack;
+    letter-spacing: 1px;
 }
