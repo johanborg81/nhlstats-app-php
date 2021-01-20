@@ -3,22 +3,12 @@
 @import 'base/base';
 @import 'base/reset';
 @import 'base/typography';
+@import 'components/buttons';
+@import 'layout/grid';
 @import 'layout/navigation';
-
-.current__season {
-    display: none;
-}
-
-.last__season {
-    display: none;
-}
-
-.career__stats {
-    display: none;
-}
-
-.playoff__stats {
-    display: none;
-}
+@import 'themes/home';
+@import 'themes/player';
+@import 'themes/team';
+@import 'themes/theme';
 
 // https://github.com/HugoGiraudel/sass-boilerplate/blob/master/stylesheets/abstracts/_variables.scss

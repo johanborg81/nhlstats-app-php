@@ -54,7 +54,7 @@ class TeamsController extends Teams {
                 if (is_array($players) || is_object($players)) {
                     foreach ($players as $player => $stats) {
                         echo "<ul>";
-                        echo "<li?><a href=".BASE_URL."views/player.php?id={$stats['person']['id']}>{$stats['person']['fullName']} | {$stats['jerseyNumber']} | {$stats['position']['code']}</a></li>";
+                        echo "<li><a href=".BASE_URL."views/player.php?id={$stats['person']['id']}>{$stats['person']['fullName']} | {$stats['jerseyNumber']} | {$stats['position']['code']}</a></li>";
                         echo "</ul>";
                     }
                 }

@@ -44,12 +44,10 @@ $teams = new TeamsController();
 
     ?>
     <section class="buttons">
-        <form action="">
             <button id="current__season">Current Season</button>
             <button id="last__season">Last Season</button>
             <button id="career__stats">Career Stats</button>
             <button id="playoff__stats">Playoff Stats</button>
-        </form>
     </section>
 </section>
 <section class="section__right">

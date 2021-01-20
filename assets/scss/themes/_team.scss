@@ -1,0 +1,20 @@
+.teams__info {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    ul {
+        li {
+            @include center;
+        }
+    }
+}
+
+.team__roster {
+    margin-bottom: 20px;
+
+    ul {
+        li {
+            @include center;
+        }
+    }
+}

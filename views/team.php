@@ -24,18 +24,25 @@ $last = $team->show_last_season();
             ?>
         </section>
         <section class="section__middle">
-            <?php
+            <div class="team__roster">
+                <h2>Current Roster</h2>
+                <?php
 
-            $team->show_roster();
+                $team->show_roster();
 
-            ?>
+                ?>
+            </div>
         </section>
         <section class="section__right">
-            <?php
+            <section class="teams">
+                <ul class="teams__list">
+                    <?php
 
-            $team->team_list();
+                    $team->team_list();
 
-            ?>
+                    ?>
+                </ul>
+            </section>
         </section>
     </div>
     <section class="section__bottom">

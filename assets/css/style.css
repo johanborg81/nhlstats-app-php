@@ -11,6 +11,13 @@ li {
 }
 
 /**
+* Basic styles for the h2 headers
+*/
+h2 {
+  text-align: center;
+}
+
+/**
 * Basic styles for links
 */
 a {
@@ -46,6 +53,12 @@ body {
   letter-spacing: 1px;
 }
 
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .navbar .navbar__nav {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -68,6 +81,57 @@ body {
 }
 .navbar .navbar__nav a:hover {
   text-decoration: underline;
+}
+
+.random__player {
+  margin-bottom: 20px;
+}
+.random__player h2 {
+  margin-top: 20px;
+}
+.random__player ul.player__info li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teams {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.teams ul.teams__list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player__info {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.player__info ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teams__info {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.teams__info ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team__roster {
+  margin-bottom: 20px;
+}
+.team__roster ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .current__season {

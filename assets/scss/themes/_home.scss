@@ -1,0 +1,23 @@
+.random__player {
+    margin-bottom: 20px;
+    h2 {
+        margin-top: 20px;
+    }
+    ul.player__info {
+        li {
+            @include center;
+        }
+    }
+}
+
+.teams {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    ul.teams__list {
+        li {
+            @include center;
+        }
+    }
+}
+
