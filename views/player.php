@@ -15,6 +15,7 @@ $current = $stats->show_current_stats();
 $last = $stats->show_last_stats();
 
 $team = new TeamsController();
+$teams = $team->show_current_season();
 
 ?>
 <div class="container">
