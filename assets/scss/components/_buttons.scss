@@ -1,3 +1,24 @@
 .buttons {
     @include center;
+    margin-bottom: 20px;
+    display: block;
+
+    button {
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-family: "Sintony", sans-serif;
+        font-size: 1em;
+        background-color: $nav-color;
+        color: $nav-link-color;
+        border: none;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        letter-spacing: 1px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }

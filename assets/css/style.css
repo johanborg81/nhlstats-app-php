@@ -57,6 +57,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
+  display: block;
+}
+.buttons button {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: "Sintony", sans-serif;
+  font-size: 1em;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.buttons button:hover {
+  text-decoration: underline;
 }
 
 .navbar .navbar__nav {

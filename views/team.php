@@ -54,7 +54,7 @@ $last = $team->show_last_season();
         ?>
     </section>
     <section class="buttons">
-        <button id="current__season">Current Season</button>
+        <button id="current__season">Current Season</button><br>
         <button id="last__season">Last Season</button>
     </section>
 </div>
