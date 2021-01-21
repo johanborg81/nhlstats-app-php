@@ -13,3 +13,11 @@
 .playoff__stats {
     display: none;
 }
+
+// Stats lists
+ul.stats__list {
+    margin-bottom: 20px;
+    li {
+        @include center;
+    }
+}

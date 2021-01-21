@@ -150,4 +150,13 @@ body {
   display: none;
 }
 
+ul.stats__list {
+  margin-bottom: 20px;
+}
+ul.stats__list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /*# sourceMappingURL=style.css.map */
