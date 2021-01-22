@@ -35,5 +35,6 @@ ul.stats__list {
         width: $max-width;
         display: grid;
         @include center;
+        min-height: 100vh;
     }
 }

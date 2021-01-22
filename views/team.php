@@ -36,6 +36,7 @@ $last = $team->show_last_season();
         <section class="section__right">
             <section class="teams">
                 <ul class="teams__list">
+                    <h2>Teams</h2>
                     <?php
 
                     $team->team_list();

@@ -60,6 +60,11 @@ body {
   margin-bottom: 20px;
   display: block;
 }
+@media (min-width: 1024px) {
+  .buttons {
+    margin-top: 20px;
+  }
+}
 .buttons button {
   width: 100%;
   padding-top: 20px;
@@ -189,6 +194,11 @@ footer p {
 .team__roster {
   margin-bottom: 20px;
 }
+@media (min-width: 1024px) {
+  .team__roster {
+    margin-top: 20px;
+  }
+}
 .team__roster ul li {
   display: flex;
   align-items: center;
@@ -236,6 +246,7 @@ ul.stats__list li {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
   }
 }
 

@@ -12,6 +12,10 @@
 .team__roster {
     margin-bottom: 20px;
 
+    @media(min-width: $large) {
+        margin-top: 20px;
+    }
+
     ul {
         li {
             @include center;

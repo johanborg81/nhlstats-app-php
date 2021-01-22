@@ -3,6 +3,10 @@
     margin-bottom: 20px;
     display: block;
 
+    @media(min-width: $large) {
+        margin-top: 20px;
+    }
+
     button {
         width: 100%;
         padding-top: 20px;

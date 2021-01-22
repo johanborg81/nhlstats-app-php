@@ -29,7 +29,7 @@ class Buttons extends Selectors {
             e.preventDefault()
             this.last_season.style.display = 'block'
             this.current_season.style.display = 'none'
-            if (window.location.href.match('player.php')) {
+            if (window.location.href.match('player.php' || 'home.php')) {
                 this.career_stats.style.display = 'none'
                 this.playoff_stats.style.display = 'none'
             }
