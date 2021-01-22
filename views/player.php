@@ -19,15 +19,23 @@ $teams = $team->show_current_season();
 
 ?>
 <div class="container">
-    <section class="grids">
+    <section class="grids__player">
         <section class="section__left">
             <?php
 
             include_once '../inc/player/player-info.php';
 
             ?>
+
+
         </section>
-        <section class="section__middle">
+        <section class="section__right">
+            <section class="buttons">
+                <button id="current__season">Current Season</button>
+                <button id="last__season">Last Season</button>
+                <button id="career__stats">Career Stats</button>
+                <button id="playoff__stats">Playoff Stats</button>
+            </section>
             <?php
 
             include_once '../inc/player/player-current-stats.php';
@@ -36,17 +44,10 @@ $teams = $team->show_current_season();
             include_once '../inc/player/player-playoff-stats.php';
 
             ?>
-        </section>
-        <section class="section__right">
-        
+
         </section>
     </section>
-    <section class="buttons">
-        <button id="current__season">Current Season</button>
-        <button id="last__season">Last Season</button>
-        <button id="career__stats">Career Stats</button>
-        <button id="playoff__stats">Playoff Stats</button>
-    </section>
+
 </div>
 <?php
 

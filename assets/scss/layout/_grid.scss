@@ -1,0 +1,40 @@
+// Sets the grids
+
+.grids {
+    @media(min-width: $large) {
+        display: grid;
+        grid-template-columns: 60% 40%;
+    }
+}
+
+.grids__team {
+    @media(min-width: $large) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "left middle right"
+        ". bottom .";
+
+        .section__left {
+            grid-area: left;
+        }
+
+        .section__middle {
+            grid-area: middle;
+        }
+
+        .section__right {
+            grid-area: right;
+        }
+
+        .bottom {
+            grid-area: bottom;
+        }
+    }
+}
+
+.grids__player {
+    @media(min-width: $large) {
+        display: grid;
+        grid-template-columns: 40% 60%;
+    }
+}
