@@ -186,4 +186,23 @@ ul.stats__list li {
   justify-content: center;
 }
 
+@media (min-width: 720px) {
+  .container {
+    margin: 0 auto;
+    max-width: 720px;
+    width: 720px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 1200px;
+    display: grid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

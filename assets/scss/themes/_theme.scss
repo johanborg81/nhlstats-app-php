@@ -21,3 +21,19 @@ ul.stats__list {
         @include center;
     }
 }
+
+.container {
+    @media(min-width: $medium) {
+        margin: 0 auto;
+        max-width: 720px;
+        width: 720px;
+    }
+
+    @media(min-width: $large) {
+        margin: 0 auto;
+        max-width: $max-width;
+        width: $max-width;
+        display: grid;
+        @include center;
+    }
+}

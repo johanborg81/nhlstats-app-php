@@ -14,7 +14,7 @@ $nav-color: #000;
 
 // Container's maximum width
 /// @type Length
-$max-width: 1180px !default;
+$max-width: 1200px !default;
 
 // Font family Poppins
 /// @type List
@@ -23,3 +23,8 @@ $text-font-stack: 'Poppins', sans-serif;
 // Font family Sintony
 /// @type List
 $navbar-font: 'Sintony', sans-serif;
+
+// Media Queries
+$small: 320px;
+$medium: 720px;
+$large: 1024px;
