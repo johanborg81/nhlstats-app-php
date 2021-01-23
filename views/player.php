@@ -30,12 +30,6 @@ $teams = $team->show_current_season();
 
         </section>
         <section class="section__right">
-            <section class="buttons">
-                <button id="current__season">Current Season</button>
-                <button id="last__season">Last Season</button>
-                <button id="career__stats">Career Stats</button>
-                <button id="playoff__stats">Playoff Stats</button>
-            </section>
             <?php
 
             include_once '../inc/player/player-current-stats.php';
@@ -44,7 +38,12 @@ $teams = $team->show_current_season();
             include_once '../inc/player/player-playoff-stats.php';
 
             ?>
-
+            <section class="buttons">
+                <button id="current__season">Current Season</button>
+                <button id="last__season">Last Season</button>
+                <button id="career__stats">Career Stats</button>
+                <button id="playoff__stats">Playoff Stats</button>
+            </section>
         </section>
     </section>
 

@@ -8,7 +8,7 @@ class TeamsController extends Teams {
      * Creates a list of all teams
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
+     * @author Johan Borg
      * @return void
      */
     public function team_list() {
@@ -28,8 +28,8 @@ class TeamsController extends Teams {
      * Show the team on the team page.
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
-     * @return void
+     * @author Johan Borg
+     * @return array
      */
     public function show_team() {
         $team = $this->set_team();
@@ -44,7 +44,7 @@ class TeamsController extends Teams {
      * Show the roster for the team on the team page.
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
+     * @author Johan Borg
      * @return void
      */
     public function show_roster() {
@@ -66,8 +66,8 @@ class TeamsController extends Teams {
      * List the current season stats for the team on the team page.
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
-     * @return void
+     * @author Johan Borg
+     * @return array
      */
     public function show_current_season() {
         $roster = $this->set_current_season();
@@ -82,8 +82,8 @@ class TeamsController extends Teams {
      * List last season stats for the team on the team page
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
-     * @return void
+     * @author Johan Borg
+     * @return array
      */
     public function show_last_season() {
         $last = $this->set_last_season();

@@ -5,7 +5,7 @@ namespace nhl\Models;
 /**
  * Teams class
  * 
- * @author Johan Borg <johanborg81@hotmail.com>
+ * @author Johan Borg
  * @package nhl\Models
  */
 class Teams {
@@ -14,7 +14,7 @@ class Teams {
      * Get the url to the api
      *
      * @access private
-     * @author Johan Borg <johanborg81@hotmail.com>
+     * @author Johan Borg
      */
     private function get_teams() {
         $url = 'https://statsapi.web.nhl.com/api/v1/teams/';
@@ -25,7 +25,7 @@ class Teams {
      * Set options for the curl
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
+     * @author Johan Borg
      * @param [type] $curl
      * @param [type] $resource
      * @return void
@@ -41,7 +41,7 @@ class Teams {
      * Get the teams through a curl request
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
+     * @author Johan Borg
      */
     protected function set_teams()
     {
@@ -60,12 +60,26 @@ class Teams {
         curl_close($curl);
     }
 
+    /**
+     * Get the team based on the id
+     *
+     * @access private
+     * @author Johan Borg
+     * @return string
+     */
     private function get_team() {
         $get_id = $_GET['id'];
         $url = "https://statsapi.web.nhl.com/api/v1/teams/$get_id";
         return $url;
     }
 
+    /**
+     * Get the team stats
+     *
+     * @access protected
+     * @author Johan Borg 
+     * @return void
+     */
     protected function set_team() {
         $curl = curl_init();
         $resource = $this->get_team()."?expand=teams.stats";
@@ -81,6 +95,13 @@ class Teams {
         curl_close($curl);
     }
 
+    /**
+     * Get the roster for the team
+     *
+     * @access protected
+     * @author Johan Borg
+     * @return void
+     */
     protected function set_roster() {
         $curl = curl_init();
         $resource = $this->get_team(). "/roster";
@@ -96,6 +117,13 @@ class Teams {
         curl_close($curl);
     }
 
+    /**
+     * Get the stats for the current season
+     *
+     * @access protected
+     * @author Johan Borg
+     * @return void
+     */
     protected function set_current_season() {
         $curl = curl_init();
         $resource = $this->get_team()."/stats";
@@ -111,6 +139,13 @@ class Teams {
         curl_close($curl);
     }
 
+    /**
+     * Get the stats for the previous season
+     *
+     * @access public
+     * @author Johan Borg
+     * @return void
+     */
     public function set_last_season() {
         $curl = curl_init();
         $resource = $this->get_team(). "?expand=team.stats&season=20192020";

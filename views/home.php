@@ -37,12 +37,6 @@ $teams = new TeamsController();
                     <li><span>Team:</span> <?= $player['currentTeam']['name']; ?></li>
                 </ul>
             </section>
-            <section class="buttons">
-                <button id="current__season">Current Season</button>
-                <button id="last__season">Last Season</button>
-                <button id="career__stats">Career Stats</button>
-                <button id="playoff__stats">Playoff Stats</button>
-            </section>
             <?php
 
             include_once '../inc/home/current-stats.php';
@@ -51,11 +45,17 @@ $teams = new TeamsController();
             include_once '../inc/home/playoff-stats.php';
 
             ?>
-
+            <section class="buttons">
+                <button id="current__season">Current Season</button>
+                <button id="last__season">Last Season</button>
+                <button id="career__stats">Career Stats</button>
+                <button id="playoff__stats">Playoff Stats</button>
+            </section>
         </section>
         <section class="section__right">
             <section class="teams">
                 <ul class="teams__list">
+                    <h2>Teams</h2>
                     <?php $teams->team_list(); ?>
                 </ul>
             </section>

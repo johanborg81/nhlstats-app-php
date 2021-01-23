@@ -13,7 +13,7 @@ class PlayersController extends Player {
      * Creates a player on the homepage
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
+     * @author Johan Borg
      * @return void
      */
     public function home_player() {
@@ -33,8 +33,8 @@ class PlayersController extends Player {
      * List the current stats for the player on the homepage
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
-     * @return void
+     * @author Johan Borg
+     * @return array
      */
     public function home_player_current_stats() {
         $current_stats = $this->set_home_player_current_stats();
@@ -49,8 +49,8 @@ class PlayersController extends Player {
      * List the last season stats for the player on the homepage
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
-     * @return void
+     * @author Johan Borg
+     * @return array
      */
     public function home_player_last_stats() {
         $last_stats = $this->set_home_player_last_stats();
@@ -65,8 +65,8 @@ class PlayersController extends Player {
      * List the career stats for the player on the homepage
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
-     * @return void
+     * @author Johan Borg
+     * @return array
      */
     public function home_player_career_stats() {
         $career_stats = $this->set_home_player_career_stats();
@@ -81,8 +81,8 @@ class PlayersController extends Player {
      * List the playoff stats for the player on the homepage
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
-     * @return void
+     * @author Johan Borg
+     * @return array
      */
     public function home_player_playoff_stats() {
         $playoff_stats = $this->set_home_player_playoff_stats();
@@ -97,8 +97,7 @@ class PlayersController extends Player {
      * Show the player on the player page
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
-     * @return void
+     * @author Johan Borg
      */
     public function show_player() {
         $stats = $this->get_player_stats();
@@ -117,8 +116,8 @@ class PlayersController extends Player {
      * List the current stats for the player on the player page.
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
-     * @return void
+     * @author Johan Borg
+     * @return array
      */
     public function show_current_stats() {
         $stats = $this->get_player_current_stats();
@@ -137,8 +136,8 @@ class PlayersController extends Player {
      * List the last season stats for the player on the player page.
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
-     * @return void
+     * @author Johan Borg
+     * @return array
      */
     public function show_last_stats() {
         $stats = $this->get_player_last_stats();

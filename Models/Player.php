@@ -5,7 +5,7 @@ namespace nhl\Models;
 /**
  * Player class
  * 
- * @author Johan Borg <johanborg81@hotmail.com>
+ * @author Johan Borg
  * @package nhl\Models
  */
 class Player {
@@ -14,7 +14,7 @@ class Player {
      * Get a player for the homepage
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
+     * @author Johan Borg
      * @return string
      */
     public function get_home_player() {
@@ -26,7 +26,7 @@ class Player {
      * Set options for the curl
      *
      * @access public
-     * @author Johan Borg <johanborg81@hotmail.com>
+     * @author Johan Borg
      * @param [type] $curl
      * @param [type] $resource
      * @return void
@@ -42,7 +42,7 @@ class Player {
      * Sort curl data for the player on the homepage
      *
      * @access protected
-     * @author Johan Borg <johanborg81@hotmail.com>
+     * @author Johan Borg
      * @return array
      */
     protected function set_home_player() {
@@ -64,7 +64,7 @@ class Player {
      * Handle the current stats
      *
      * @access protected
-     * @author Johan Borg <johanborg81@hotmail.com>
+     * @author Johan Borg
      */
     protected function set_home_player_current_stats() {
         $curl = curl_init();
@@ -85,7 +85,7 @@ class Player {
      * Handle the data for the last season data stats
      *
      * @access protected
-     * @author Johan Borg <johanborg81@hotmail.com>
+     * @author Johan Borg
      */
     protected function set_home_player_last_stats() {
         $curl = curl_init();
@@ -106,7 +106,7 @@ class Player {
      * Handle the data for the career stats
      *
      * @access protected
-     * @author Johan Borg <johanborg81@hotmail.com>
+     * @author Johan Borg
      */
     protected function set_home_player_career_stats() {
         $curl = curl_init();
@@ -123,6 +123,13 @@ class Player {
         curl_close($curl);
     }
 
+    /**
+     * Handle the data from for the playoff stats
+     *
+     * @access protected
+     * @author Johan Borg
+     * @return void
+     */
     protected function set_home_player_playoff_stats() {
         $curl = curl_init();
         $resource = $this->get_home_player()."?expand=person.stats,stats.team&stats=yearByYear,yearByYearPlayoffs,careerRegularSeason,careerPlayoffs&site=en_nhl";
@@ -142,7 +149,7 @@ class Player {
      * Get the url with the id to a certain player
      *
      * @access private
-     * @author Johan Borg <johanborg81@hotmail.com>
+     * @author Johan Borg
      * @return string
      */
     private function get_player_url() {
@@ -151,6 +158,13 @@ class Player {
         return $url;
     }
 
+    /**
+     * Get the player stats for the player page
+     *
+     * @access protected
+     * @author Johan Borg
+     * @return void
+     */
     protected function get_player_stats() {
         $curl = curl_init();
         $resource = $this->get_player_url()."?expand=person.stats,stats.team&stats=yearByYear,yearByYearPlayoffs,careerRegularSeason,careerPlayoffs&site=en_nhl";
@@ -166,6 +180,13 @@ class Player {
         curl_close($curl);
     }
 
+    /**
+     * Get the this season stats for a player
+     *
+     * @access protected
+     * @author Johan Borg
+     * @return void
+     */
     protected function get_player_current_stats() {
         $curl = curl_init();
         $resource = $this->get_player_url()."/stats?stats=statsSingleSeason&season=20202021";
@@ -181,6 +202,13 @@ class Player {
         curl_close($curl);
     }
 
+    /**
+     * Get the stats for the last season for a player
+     *
+     * @access protected
+     * @author Johan Borg 
+     * @return void
+     */
     protected function get_player_last_stats() {
         $curl = curl_init();
         $resource = $this->get_player_url(). "/stats?stats=statsSingleSeason&season=20192020";
